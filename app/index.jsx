@@ -1,10 +1,23 @@
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-const Colon = require("../assets/Colon.png");
+import { StyleSheet, View, Alert, Pressable, Text } from "react-native";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="small" color="black" />
+      <Pressable
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? "#333" : "#000",
+            paddingVertical: 12,
+            paddingHorizontal: 32,
+            borderRadius: 9999,
+            alignItems: "center",
+            justifyContent: "center",
+          },
+        ]}
+        onPress={() => console.log("Pressed")}
+      >
+        <Text style={{ color: "white" }}>Alert</Text>
+      </Pressable>
     </View>
   );
 };
