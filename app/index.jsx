@@ -1,20 +1,7 @@
-import { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  ScrollView,
-  Button,
-  Pressable,
-  Modal,
-} from "react-native";
-const imgLogo = require("../assets/BU_logo.png");
+import { StyleSheet, Text, View } from "react-native";
+const Colon = require("../assets/Colon.png");
 
 const Home = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <View style={styles.container}>
       <Text>Hello World</Text>
