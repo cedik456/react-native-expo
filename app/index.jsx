@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 const Colon = require("../assets/Colon.png");
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello World</Text>
+      <ActivityIndicator size="small" color="black" />
     </View>
   );
 };
