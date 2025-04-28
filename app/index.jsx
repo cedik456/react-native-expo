@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,10 +8,13 @@ import {
   ScrollView,
   Button,
   Pressable,
+  Modal,
 } from "react-native";
 const imgLogo = require("../assets/BU_logo.png");
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <View style={styles.container}>
       {/* <ImageBackground
@@ -23,7 +27,7 @@ const Home = () => {
         </View>
         <Pressable
           style={[styles.button, styles.center]}
-          onPress={() => console.log("Button pressed")}
+          onPress={() => setIsModalOpen(true)}
         >
           <Text style={styles.buttonText}>Click</Text>
         </Pressable>
@@ -69,6 +73,21 @@ const Home = () => {
           fugit iste asperiores!
         </Text>
       </ScrollView>
+      <Modal
+        visible={isModalOpen}
+        animationType="slide"
+        presentationStyle="pageSheet"
+      >
+        <View style={[styles.container, { backgroundColor: "red" }]}>
+          <Text>This is a modal</Text>
+          <Pressable
+            style={[styles.button]}
+            onPress={() => setIsModalOpen(false)}
+          >
+            <Text style={styles.buttonText}>Close</Text>
+          </Pressable>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -80,6 +99,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
+    backgroundColor: "white",
   },
 
   button: {
