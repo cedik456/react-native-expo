@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-const Colon = require("../assets/Colon.png");
+import { StyleSheet, View, ActivityIndicator } from "react-native";
+import Greet from "../components/Greet";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="small" color="black" />
+      <Greet name="Cedric Nano" />
+      <Greet name="Charles Alamares" />
+      <Greet name="Lou Canon" />
     </View>
   );
 };
@@ -17,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    gap: 30,
     backgroundColor: "white",
   },
 });
