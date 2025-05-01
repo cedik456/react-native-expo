@@ -10,6 +10,10 @@ const Home = () => {
       <View style={[styles.box, styles.redBg]}>
         <Text style={styles.primaryColor}>Red</Text>
       </View>
+
+      <View style={[styles.box, styles.greenBg]}>
+        <Text style={styles.primaryColor}>Green</Text>
+      </View>
     </View>
   );
 };
@@ -22,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    gap: 10,
+
     backgroundColor: "white",
   },
 
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 50,
     borderRadius: 4,
+    marginBottom: 4,
   },
 
   blackBg: {
@@ -45,4 +50,10 @@ const styles = StyleSheet.create({
   redBg: {
     backgroundColor: "red",
   },
+
+  greenBg: {
+    backgroundColor: "green",
+  },
 });
+
+// Reminder to wrap the text component if we're adding a border radius for the text
