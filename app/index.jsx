@@ -7,14 +7,36 @@ const Home = () => {
         style={({ pressed }) => [
           {
             backgroundColor: pressed ? "#333" : "#000",
-            paddingVertical: 12,
-            paddingHorizontal: 32,
-            borderRadius: 9999,
-            alignItems: "center",
-            justifyContent: "center",
           },
+          styles.alertButton,
         ]}
-        onPress={() => console.log("Pressed")}
+        onPress={() => Alert.alert("Wrong password!")}
+      >
+        <Text style={{ color: "white" }}>Alert</Text>
+      </Pressable>
+      <Pressable
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? "#333" : "#000",
+          },
+          styles.alertButton,
+        ]}
+        onPress={() =>
+          Alert.alert("Wrong password!", "Type password again", [
+            {
+              text: "Cancel",
+              onPress: () => {
+                console.log("Canceled");
+              },
+            },
+            {
+              text: "Ok",
+              onPress: () => {
+                console.log("Ok");
+              },
+            },
+          ])
+        }
       >
         <Text style={{ color: "white" }}>Alert</Text>
       </Pressable>
@@ -31,5 +53,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "white",
+  },
+
+  alertButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 9999,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
