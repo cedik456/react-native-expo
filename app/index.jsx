@@ -4,7 +4,7 @@ const Colon = require("../assets/Colon.png");
 const Home = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="small" color="black" />
+      <Text>Hello World</Text>
     </View>
   );
 };
