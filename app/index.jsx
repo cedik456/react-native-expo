@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-const Colon = require("../assets/Colon.png");
+import { StyleSheet, Text, View } from "react-native";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="small" color="black" />
+      <View style={[styles.box, styles.blackBg]}>
+        <Text style={styles.primaryColor}>Black</Text>
+      </View>
+
+      <View style={[styles.box, styles.redBg]}>
+        <Text style={styles.primaryColor}>Red</Text>
+      </View>
     </View>
   );
 };
@@ -17,6 +22,27 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+    gap: 10,
     backgroundColor: "white",
+  },
+
+  primaryColor: {
+    color: "white",
+  },
+
+  box: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 80,
+    height: 50,
+    borderRadius: 4,
+  },
+
+  blackBg: {
+    backgroundColor: "black",
+  },
+
+  redBg: {
+    backgroundColor: "red",
   },
 });
