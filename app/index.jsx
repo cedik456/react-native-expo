@@ -18,6 +18,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
+    alignItems: "center",
     marginTop: 70,
     backgroundColor: "white",
     borderColor: "grey",
