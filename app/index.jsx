@@ -17,12 +17,13 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    height: 300,
+    height: 200,
     flexWrap: "wrap",
     marginTop: 70,
     backgroundColor: "white",
     borderColor: "grey",
     borderWidth: 5,
+    alignContent: "stretch",
     // flex: 1,
   },
 });
