@@ -1,10 +1,5 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Platform } from "react-native";
+import CustomButton from "../components/CustomButton/CustomButton";
 const Colon = require("../assets/Colon.png");
 
 const Home = () => {
@@ -14,7 +9,7 @@ const Home = () => {
         <View style={styles.box}>
           <Text style={styles.text}>Welcome</Text>
         </View>
-        {/* <ActivityIndicator size="small" color="black" /> */}
+        <CustomButton />
       </View>
     </SafeAreaView>
   );
@@ -28,7 +23,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 20,
+    marginHorizontal: 25,
+    paddingTop: Platform.OS === "android" ? 25 : 20,
     backgroundColor: "white",
   },
   box: {
@@ -37,8 +33,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   text: {
-    fontSize: 15,
-    fontWeight: "bold",
-    textAlign: "center",
+    ...Platform.select({
+      ios: {
+        fontSize: 15,
+        fontWeight: "bold",
+        textAlign: "center",
+      },
+      android: {
+        fontSize: 20,
+        textAlign: "center",
+      },
+    }),
   },
 });
